@@ -12,7 +12,7 @@ Go é um aplicativo que permite visualizar aplicativos React Native em desenvolv
 - Diferentemente da Web, tudo em React Native está encapsulado em componentes, que são blocos de construção do
 aplicativo.
 
-- Um React Native App consiste de duas partes principais: o código JavaScript e o código nativo do App.
+- Um React Native Index consiste de duas partes principais: o código JavaScript e o código nativo do Index.
 
 - View é o componente mais básico do React Native, pode ser comparado ao div do HTML, é usado para criar contêineres
 e layouts.
@@ -61,3 +61,87 @@ sistemas, ela sempre terá um estilo diferente dependendo do sistema operacional
 
 - Se você precisa personalizar o alerta, você deve criar um Custom Dialog, que na realidade o que será construído é um
 modal em full screen.
+
+- SVG's são itens que precisam ser usados com cuidado em React Native, pois o uso exagerado pode causar lentidão e até
+mesmo interromper a utilização.
+
+- A razão para instalar via npx e não npm ou yarn, é que as versões do React são atualizadas da mesma forma que as
+atualizações do Expo, o npx faz um check prévio como: "Installing 1 SDK 53.0.0 compatible native module using npm", para
+se certificar que a versão da biblioteca instalada é compatível com as versões do Expo e do React Native que estiver
+utilizando.
+
+- Layouts em React Native é composto basicamente de um Stack, onde a próxima tela virá por cima da última.
+
+- A idéia com o arquivo de rotas é que o arquivo que determine a rota possua o mesmo nome que a rota terá no aplicativo.
+A primeira página ou a página inicial de qualquer rota é recomendado que seja com o arquivo index.tsx, esse é o padrão.
+Nas outras rotas cria-se um arquivo com o nome da rota.
+
+- A navegação Mobile é um pouco diferente na navegação Web, na mobile temos Stacks, Modals e Tabs, que são os
+componentes que compõem a navegação.
+
+- Tudo dentro da pasta App, ou é uma screen ou é um arquivo de layout. Um arquivo de layout é um arquivo geralmente
+identificado com o _ no início do nome. O arquivo de layout diz, especificamente, como o será exibido as telas daquela
+pasta.
+
+- Todas as screens e layouts devem ter um export default, pois é assim que o React Native identifica qual é a tela ou
+layout que deve ser exibido.
+
+- O Hook useRouter é usado para navegar entre as telas do aplicativo. Ele permite que você navegue para uma nova tela,
+passando parâmetros e opções de navegação. O useRouter é uma função que retorna um objeto com métodos para navegar entre
+as telas, como push, replace e back. O useRouter é usado em conjunto com o componente Router, que é responsável por
+definir as rotas do aplicativo. O useRouter é uma forma de acessar a navegação do aplicativo de forma mais fácil e
+rápida, sem precisar passar props de navegação entre os componentes. Ele é uma alternativa ao uso do componente
+NavigationContainer, que é usado para definir as rotas do aplicativo.
+
+- O uso do componente Link é uma forma de navegar entre as telas do aplicativo, sem precisar usar o useRouter.
+
+- Outra forma de navegação são os botões no cabeçalho, uma vez que eles são definidos por default, com o formato
+ dependendo de cada sistema operacional.
+
+- Fazer o render de um conteudo como modal significa renderizar o componente no topo do outro conteúdo.
+
+- Assets são importados através de propriedades dentro do componente.
+
+- Não há um Form Component em React Nativo, assim, todos os inputs devem ser gerenciados manualmente.
+
+- Como existe um "Done" button no teclado, não é comum criar botão de submit em formulários em React Native.
+
+- Diferentemente da Web, não existe um comportamento de Scroll nativo em React Native, caso seja necessário utilizar o
+scroll, deve-se utilizar o componente ScrollView.
+
+- Caso seja necessário adicionar algum UI estilo, como paddings, margins, etc, em um elemento Scrollavel, deve-se
+adicioná-lo ao ContentContainer ao invés do Container.
+
+- Caso você utilize na tela um array com os itens mapeados, o ideal é não utilizar o ScrollView e sim o FlatList, que é
+uma lista otimizada para exibir grandes quantidades de dados. O FlatList é mais eficiente do que o ScrollView, pois
+ele renderiza apenas os itens visíveis na tela, enquanto o ScrollView renderiza todos os itens de uma vez.
+
+- Se o dado manipulado tiver um Id ou uma Key, o Flatlist por padrão já faz utilização desse dado, assim, não é
+necessário declarar keys para o uso de FlatList. Caso não tenha, a propriedade necessária é o KeyExtractor, que é uma
+função que recebe o item e retorna uma string única para cada item da lista.
+
+- O grande diferencial do FlatList, é que a partir da propriedade RenderItem, ele já renderiza os itens de forma
+otimizada, ou seja, ele renderiza apenas os itens visíveis na tela, enquanto o ScrollView renderiza todos os itens de
+uma vez. Isso significa que o FlatList é mais eficiente em termos de desempenho, especialmente quando se trata de listas
+grandes. Além disso, o FlatList também oferece recursos adicionais, como a capacidade de rolar para um item específico,
+atualizar a lista de forma eficiente e renderizar itens de forma assíncrona.
+
+- A utilização da propriedade CSS flex é extremamente útil, com flex: 1 significando que o elemento irá ocupar o espaço
+disponível, enquanto flex: 0 significa que o elemento não irá ocupar nenhum espaço adicional. Isso é
+particularmente útil quando se trata de layouts responsivos, onde os elementos precisam se ajustar ao tamanho da tela.
+
+- AsyncStorage é uma biblioteca que permite armazenar dados de forma assíncrona no dispositivo do usuário. É usado para
+armazenar dados simples, como preferências do usuário, configurações do aplicativo e outros dados que não precisam ser
+persistidos em um banco de dados. O AsyncStorage é uma forma simples e rápida de armazenar dados no dispositivo do
+usuário, mas não é recomendado para armazenar grandes quantidades de dados ou dados complexos. Para isso, é melhor usar
+um banco de dados, como o SQLite ou o Realm.
+
+- O pacote AsyncStorage foi projetado nativamente para fazer parte do Core do React Native, porém, foi colocado como
+pacote externo justamente para que possa sofrer mais atializações e melhorias por parte da comunidade, do que seria
+se fizesse parte do Core. Assim, ela faz parte do core, mas é um pacote externo.
+
+- O useEffect é um Hook que permite executar efeitos colaterais em componentes funcionais. Ele é usado para executar
+código que não está diretamente relacionado à renderização do componente, como chamadas de API, manipulação de eventos,
+e outras operações assíncronas. O useEffect é executado após a renderização do componente, e pode ser configurado para
+ser executado apenas uma vez, quando o componente é montado, ou sempre que uma dependência específica é alterada.
+
