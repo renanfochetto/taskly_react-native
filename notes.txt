@@ -79,6 +79,24 @@ Nas outras rotas cria-se um arquivo com o nome da rota.
 - A navegação Mobile é um pouco diferente na navegação Web, na mobile temos Stacks, Modals e Tabs, que são os
 componentes que compõem a navegação.
 
+- Haptics é um recurso que o web não possui, ele é a pequena vibração que o celular faz de acordo com algumas ações
+ou interações do usuário, ainda que ele seja um recurso útil e interessante, é necessário usar de forma ponderada para
+que não se torne excessivo e transforme a UX em algo ruim.
+
+- Notificações é um outro recurso do React Native que não existe na Web, ele é usado para enviar mensagens ou alertas
+para o usuário. Existem dois tipos, a remota, que é enviada por um servidor e a local, que é enviada pelo próprio
+aplicativo. As notificações são usadas para informar o usuário sobre eventos importantes, como novas mensagens,
+atualizações de status, lembretes e outras informações relevantes.
+
+- O ato de requerer permissão do usuário para obter permissão para algum evento ou utilitário do celular, só pode ser
+feito uma única vez por aplicativo, ou seja, se o usuário já deu permissão para o aplicativo acessar a câmera,
+não será necessário solicitar novamente essa permissão, a não ser que o usuário revogue essa permissão nas configurações
+do dispositivo.Caso não seja concedida a permissão a única maneira de alterar é com o usuário indo até as configurações
+do dispositivo e alterando manualmente.
+
+
+
+
 - Tudo dentro da pasta App, ou é uma screen ou é um arquivo de layout. Um arquivo de layout é um arquivo geralmente
 identificado com o _ no início do nome. O arquivo de layout diz, especificamente, como o será exibido as telas daquela
 pasta.
